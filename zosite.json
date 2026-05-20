@@ -1,0 +1,15 @@
+{
+  "name": "apex-circle",
+  "local_port": 51947,
+  "entrypoint": "bun run dev",
+  "publish": {
+    "label": "apex-circle",
+    "type": "http",
+    "entrypoint": "bun run prod",
+    "published_port": 50664,
+    "env": {
+      "NODE_ENV": "production",
+      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+    }
+  }
+}
