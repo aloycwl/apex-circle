@@ -47,13 +47,31 @@ export default function Apply() {
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(form),
       });
+      const raw = await res.text();
+      let data: any = {};
+      try {
+        data = raw ? JSON.parse(raw) : {};
+      } catch {
+        data = { error: raw.slice(0, 200) };
+      }
       if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || `Request failed (${res.status})`);
+        const msg =
+          typeof data.error === "string"
+            ? data.error
+            : data.error
+            ? JSON.stringify(data.error)
+            : `Request failed (${res.status})`;
+        throw new Error(msg);
       }
       navigate("/thank-you?kind=apply");
     } catch (err: any) {
-      setError(err?.message || "Something went wrong. Please try again or email aloycwl@gmail.com directly.");
+      const msg =
+        err instanceof Error
+          ? err.message
+          : typeof err === "string"
+          ? err
+          : JSON.stringify(err);
+      setError(msg || "Something went wrong. Please try again or email aloycwl@gmail.com directly.");
       setSubmitting(false);
     }
   };

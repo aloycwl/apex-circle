@@ -1,5 +1,4 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { handleSubmission } from "../lib/submission";
 
 export default async function handler(
   req: VercelRequest,
@@ -14,17 +13,21 @@ export default async function handler(
     return;
   }
   if (req.method !== "POST") {
-    res.status(405).json({ error: "Method not allowed" });
+    res.status(405).json({ ok: false, error: "Method not allowed" });
     return;
   }
 
-  const body =
-    typeof req.body === "string" ? JSON.parse(req.body || "{}") : req.body || {};
-
-  const result = await handleSubmission("enquire", body);
-  if (!result.ok) {
-    res.status(400).json(result);
-    return;
+  try {
+    const body =
+      typeof req.body === "string"
+        ? JSON.parse(req.body || "{}")
+        : req.body || {};
+    const { handleSubmission } = await import("../lib/submission.js");
+    const result = await handleSubmission("enquire", body);
+    res.status(result.ok ? 200 : 400).json(result);
+  } catch (e) {
+    console.error("[apex-enquire] handler crashed:", e);
+    const msg = e instanceof Error ? e.message : String(e);
+    res.status(500).json({ ok: false, error: `Server error: ${msg}` });
   }
-  res.status(200).json(result);
 }
