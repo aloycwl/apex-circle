@@ -14,7 +14,7 @@ import { createServer as createViteServer } from "vite";
 import config from "./zosite.json";
 import { Hono } from "hono";
 import { mkdir, writeFile, appendFile } from "node:fs/promises";
-import { handleSubmission, type Kind } from "./lib/submission";
+import { handleSubmission, type Kind } from "./lib/submission.js";
 
 type Mode = "development" | "production";
 const app = new Hono();

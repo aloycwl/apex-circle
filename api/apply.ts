@@ -1,4 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { handleSubmission } from "../lib/submission.js";
 
 export default async function handler(
   req: VercelRequest,
@@ -22,7 +23,6 @@ export default async function handler(
       typeof req.body === "string"
         ? JSON.parse(req.body || "{}")
         : req.body || {};
-    const { handleSubmission } = await import("../lib/submission.js");
     const result = await handleSubmission("apply", body);
     res.status(result.ok ? 200 : 400).json(result);
   } catch (e) {
