@@ -1,2 +1,25 @@
+# Dependencies
 node_modules/
+
+# Builds
 dist/
+.vite/
+
+# Submissions (Zo runtime only — never committed)
+submissions/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Vercel
+.vercel

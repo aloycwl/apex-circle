@@ -9,7 +9,8 @@
     "published_port": 50664,
     "env": {
       "NODE_ENV": "production",
-      "ZO_CLIENT_IDENTITY_TOKEN": "none"
+      "ZO_API_KEY": "${ZO_API_KEY}",
+      "APEX_NOTIFY_EMAIL": "aloycwl@gmail.com"
     }
   }
 }

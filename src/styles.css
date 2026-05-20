@@ -5,82 +5,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  color-scheme: light dark;
+  color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.147 0.004 49.25);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.147 0.004 49.25);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.147 0.004 49.25);
-  --primary: oklch(0.216 0.006 56.043);
-  --primary-foreground: oklch(0.985 0.001 106.423);
-  --secondary: oklch(0.97 0.001 106.424);
-  --secondary-foreground: oklch(0.216 0.006 56.043);
-  --muted: oklch(0.97 0.001 106.424);
-  --muted-foreground: oklch(0.553 0.013 58.071);
-  --accent: oklch(0.97 0.001 106.424);
-  --accent-foreground: oklch(0.216 0.006 56.043);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.923 0.003 48.717);
-  --input: oklch(0.923 0.003 48.717);
-  --ring: oklch(0.709 0.01 56.259);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0.001 106.423);
-  --sidebar-foreground: oklch(0.147 0.004 49.25);
-  --sidebar-primary: oklch(0.216 0.006 56.043);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.97 0.001 106.424);
-  --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
-  --sidebar-border: oklch(0.923 0.003 48.717);
-  --sidebar-ring: oklch(0.709 0.01 56.259);
-}
+  /* Apex Circle — Dark + Gold luxury theme */
+  --radius: 0.5rem;
 
-.dark {
-  --background: oklch(0.147 0.004 49.25);
-  --foreground: oklch(0.985 0.001 106.423);
-  --card: oklch(0.216 0.006 56.043);
-  --card-foreground: oklch(0.985 0.001 106.423);
-  --popover: oklch(0.216 0.006 56.043);
-  --popover-foreground: oklch(0.985 0.001 106.423);
-  --primary: oklch(0.923 0.003 48.717);
-  --primary-foreground: oklch(0.216 0.006 56.043);
-  --secondary: oklch(0.268 0.007 34.298);
-  --secondary-foreground: oklch(0.985 0.001 106.423);
-  --muted: oklch(0.268 0.007 34.298);
-  --muted-foreground: oklch(0.709 0.01 56.259);
-  --accent: oklch(0.268 0.007 34.298);
-  --accent-foreground: oklch(0.985 0.001 106.423);
+  --apex-black: #0a0a09;
+  --apex-ink: #131210;
+  --apex-graphite: #1c1a17;
+  --apex-line: #2a2620;
+  --apex-mute: #8b857a;
+  --apex-bone: #e9e3d5;
+  --apex-cream: #f5efe1;
+  --apex-gold: #c8a25b;
+  --apex-gold-soft: #d8b977;
+  --apex-gold-deep: #8a6a30;
+
+  --background: var(--apex-black);
+  --foreground: var(--apex-cream);
+  --card: var(--apex-ink);
+  --card-foreground: var(--apex-cream);
+  --popover: var(--apex-ink);
+  --popover-foreground: var(--apex-cream);
+  --primary: var(--apex-gold);
+  --primary-foreground: #0a0a09;
+  --secondary: var(--apex-graphite);
+  --secondary-foreground: var(--apex-cream);
+  --muted: var(--apex-graphite);
+  --muted-foreground: var(--apex-mute);
+  --accent: var(--apex-gold-soft);
+  --accent-foreground: #0a0a09;
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.553 0.013 58.071);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.216 0.006 56.043);
-  --sidebar-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-accent: oklch(0.268 0.007 34.298);
-  --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.553 0.013 58.071);
-}
-
-body {
-  margin: 0;
+  --border: var(--apex-line);
+  --input: var(--apex-line);
+  --ring: var(--apex-gold);
 }
 
 @theme inline {
@@ -106,26 +68,174 @@ body {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-apex-gold: var(--apex-gold);
+  --color-apex-gold-soft: var(--apex-gold-soft);
+  --color-apex-gold-deep: var(--apex-gold-deep);
+  --color-apex-bone: var(--apex-bone);
+  --color-apex-cream: var(--apex-cream);
+  --color-apex-graphite: var(--apex-graphite);
+  --color-apex-ink: var(--apex-ink);
+  --color-apex-mute: var(--apex-mute);
+  --color-apex-line: var(--apex-line);
+  --color-apex-black: var(--apex-black);
+
+  --font-serif: "Playfair Display", "Cormorant Garamond", "Times New Roman", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+body {
+  margin: 0;
+  background: var(--apex-black);
+  color: var(--apex-cream);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
+}
+
+/* Grain texture overlay for depth */
+.apex-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+}
+
+/* Gold gradient text */
+.apex-gold-text {
+  background: linear-gradient(180deg, #ecd391 0%, #c8a25b 55%, #8a6a30 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hairline gold divider */
+.apex-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(200, 162, 91, 0.55) 50%, transparent 100%);
+}
+
+/* Subtle vignette for hero */
+.apex-vignette {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(200, 162, 91, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(200, 162, 91, 0.07) 0%, transparent 60%);
+}
+
+/* Card sheen on hover */
+.apex-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(28, 26, 23, 0.85) 0%, rgba(19, 18, 16, 0.95) 100%);
+  border: 1px solid var(--apex-line);
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+}
+.apex-card:hover {
+  border-color: rgba(200, 162, 91, 0.55);
+  box-shadow: 0 24px 60px -32px rgba(200, 162, 91, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Button base */
+.apex-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 9999px;
+  padding: 0.85rem 1.6rem;
+  transition: all 200ms ease;
+  font-size: 0.875rem;
+}
+.apex-btn-primary {
+  background: linear-gradient(180deg, #e0bf78 0%, #c8a25b 50%, #a07f3e 100%);
+  color: #0a0a09;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 12px 30px -12px rgba(200, 162, 91, 0.5);
+}
+.apex-btn-primary:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 16px 40px -10px rgba(200, 162, 91, 0.65);
+}
+.apex-btn-ghost {
+  background: transparent;
+  color: var(--apex-cream);
+  border: 1px solid var(--apex-line);
+}
+.apex-btn-ghost:hover {
+  border-color: var(--apex-gold);
+  color: var(--apex-gold-soft);
+}
+
+/* Pillar number */
+.apex-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--apex-gold);
+}
+
+/* Floating motion */
+@keyframes apex-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.apex-float { animation: apex-float 7s ease-in-out infinite; }
+
+/* Marquee */
+@keyframes apex-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.apex-marquee-track {
+  animation: apex-marquee 38s linear infinite;
+}
+
+/* Input */
+.apex-input {
+  width: 100%;
+  background: rgba(10, 10, 9, 0.6);
+  border: 1px solid var(--apex-line);
+  color: var(--apex-cream);
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+.apex-input::placeholder { color: var(--apex-mute); }
+.apex-input:focus {
+  outline: none;
+  border-color: var(--apex-gold);
+  box-shadow: 0 0 0 3px rgba(200, 162, 91, 0.15);
+}
+
+/* Logo wordmark */
+.apex-logo {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Reveal on scroll */
+.apex-reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: apex-reveal-in 800ms cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes apex-reveal-in {
+  to { opacity: 1; transform: translateY(0); }
 }
